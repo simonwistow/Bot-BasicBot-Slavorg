@@ -1,0 +1,9 @@
+\.DS_Store
+_build
+Build$
+\.svn
+CVS
+~$
+MANIFEST\.
+blib
+\.tar\.gz$

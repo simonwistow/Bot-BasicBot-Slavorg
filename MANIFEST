@@ -1,0 +1,5 @@
+Build.PL
+lib/Bot/BasicBot/Slavorg.pm
+MANIFEST			This list of files
+slavorg.pl
+META.yml
