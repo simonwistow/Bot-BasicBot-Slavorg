@@ -1,4 +1,4 @@
-﻿=head1 NAME
+=head1 NAME
 
 Bot::BasicBot::Slavorg - A IRC opbot
 
@@ -276,7 +276,8 @@ sub relationship {
 sub canonical_nick {
   my ($self, $nick) = @_;
   $nick = lc($nick);
-  $nick =~ s/_*$//;
+  $nick =~ s/_*$//; # _jerakeen
+  $nick =~ s/^q{1,2}[\[\{](.*?)[\]\}]/$1/; # qq{blech}
   return $nick;
 }
 
@@ -307,7 +308,7 @@ sub owner {
 sub load_settings {
   my $self = shift;
   
-  $self->{data} = (-f "slavorg.yaml") ? eval { LoadFile( $self->config_file ) } : {};
+  $self->{data} = (-f $self->config_file) ? eval { LoadFile( $self->config_file ) } : {};
   die "Error loading settings: $@\n" if $@;
   $self->channels( $self->{data}{channels} || [] );
 }
