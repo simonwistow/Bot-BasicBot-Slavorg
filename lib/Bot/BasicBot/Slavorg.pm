@@ -93,10 +93,10 @@ use strict;
 use base qw( Bot::BasicBot );
 use YAML qw (LoadFile DumpFile );
 
+our $VERSION = "0.10";
+
 sub init {
   my $self = shift;
-  # load settings or something
-
   $self->load_settings();
   $self->trust("all", $self->owner, 1);
   
